@@ -21,6 +21,36 @@ while at the same time making sure that all characters of the extended layout ar
 So this layout is not optimized to be used directly with a standard non-programmable keyboard, 
 but it´s optimized to give more programming freedom to the programmable keyboards.
 
+Long explanation here: https://docs.google.com/document/d/1OiI-ya_XjVfk-rus44CFxOqT6734LNw9ImftXiJKImw/edit?usp=sharing
+
+In case where the word ¨layout¨ is ambiguous, I am using the following terms:
+ - Software layout -- the layout defined in the operating system, 
+   defined using KLC for Windows, xkb for Linux, and something similar for macOS.
+   This maps the standardized key ¨scan¨ codes to characters.
+ - Firmware layout -- this tells the keyboard which key code to send to the operating system.
+   Programmable keyboards can send differet key codes from the same key, depending on their internal keyboard layers.
+   Crucially, the operating system doesn´t know about the keyboard layers, 
+   and the keyboard can´t know which characters will actually be produced by the key codes it sends.
+ - Total Layout -- this is my own term for the result of all the other layouts: 
+   which character you actually get out of a key.
+
+To make this all more confusing, the scan codes will also be transformed according to different mappings.
+It seems that Windows and Linux keyboard mappings are defined in terms of scan codes 
+which more or less number the keys by their physical position on the old typewriter keyboard, 
+where codes where standardized for the IBM PC AT, or least they are quoted as such in the USB standard.
+USB in turn, numbers the keys semantically by their US querty layout meaning.
+
+Here is a list of USB keycodes mapped to the old IBM ones: https://www.toomanyatoms.com/computer/usb_keyboard_codes.html
+
+So if you are ever making a custom firmware that works together with a custom software layout, 
+debugging can be very confusing as keys get mapped to letter codes, then scan codes, then letters again.
+This layout try to make it easier to have most of the letter mapping logic in the keyboard firmware, 
+by leaving most of the mappings as they are in the standard.
+This allows you to map any language or layouts like Colemak, qwerty-flip, or my [Gemütliches Layout] 
+in your (hopefully) comfortable firmware mapping tool.
+
+[Gemütliches Layout]: https://github.com/matey-jack/gemuetliche-tastatur
+
 
 ## Solution
 
@@ -37,6 +67,8 @@ The main differences to US ext int´l are:
  - Finally, since my own 4×6 layout omits the =+ key from the base layer, I also changed the ´¨ key to produced the VK_PLUS keycode.
    This should allow Ctrl+´ to stand in for Ctrl++ which probably wouldn´t work when pressing Ctrl+Shift+9.
 
+Example (total) layout for Iris CE and Ergodox keyboards which uses this (software) layout is here:
+https://docs.google.com/spreadsheets/d/1JkIiKLAgzVKIijrSS0zbML-NLrd7E52zQ_xwXzjz3oQ/edit?usp=sharing
 
 ## Usage
 
