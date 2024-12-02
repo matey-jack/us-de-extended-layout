@@ -62,13 +62,16 @@ The main differences to US ext int'l are:
      In my layouts I map = on a layer and key close to < and >, so that it is easy to type <= and >= .
      I also map / to this layer.
  - US ext int'l has apostrophe and quotation marks as dead keys, needing to type an extra space key to get the base character. 
-   Since especially the apostrophe is used so often in English, I removed the dead key functionality and make it behave like ordinary US ANSI.
-   Currently, the dead-key mapping tables are removed from the layout, but they can be brought back in a later version if anyone needs them. 
+   Since especially the apostrophe is used so often in English, I moved the dead key functionality and make it behave like ordinary US ANSI.
+   The dead-key mapping tables are preserved in the AltGr and Shift+AltGr layer of the same key.
+   The can be used directly or mapped in keyboard firmware to any other key. 
  - Finally, since my own 4×6 layout omits the =+ key from the base layer, I also changed the '" key to produced the VK_PLUS keycode.
-   This should allow Ctrl+' to stand in for Ctrl++ which probably wouldn't work when pressing Ctrl+Shift+9.
+   This allows Ctrl+' to stand in for Ctrl++, avoiding any interference with mappings of Ctrl+9 or Shift+Ctrl+9 that any application might have.
 
-Example (total) layout for Iris CE and Ergodox keyboards which uses this (software) layout is here:
+Example (total) layout for Iris CE and Ergodox keyboards which uses this (software) layout is described here:
 https://docs.google.com/spreadsheets/d/1JkIiKLAgzVKIijrSS0zbML-NLrd7E52zQ_xwXzjz3oQ/edit?usp=sharing
+
+And implemented here: https://configure.zsa.io/ergodox-ez-st/layouts/MWA4J/7avvp/0
 
 ## Usage
 
