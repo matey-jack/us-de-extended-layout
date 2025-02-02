@@ -6,6 +6,6 @@ Since the changes are very small and work well with all keyboards, I just overro
 
 To use, just do
 
-    diff -u symbols_us /usr/share/X11/xkb/symbols/us
+    diff -ub symbols_us /usr/share/X11/xkb/symbols/us
     # and if you approve of the changes:
     sudo cp symbols_us /usr/share/X11/xkb/symbols/us
