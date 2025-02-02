@@ -138,7 +138,7 @@ xkb_symbols "intl" {
     key <AB08> { [     comma,  semicolon,      ccedilla,         Ccedilla ] };
     key <AB09> { [    period,      colon, dead_abovedot,       dead_caron ] };
     key <AB10> { [     slash,   question,  questiondown,        dead_hook ] };
-    key <BKSL> { [ backslash,        bar,       notsign,        brokenbar ] };
+    key <BKSL> { [       bar,  backslash,       notsign,        brokenbar ] };
 
     key <LSGT> { [ backslash,   bar,            backslash,      bar ] };
 
