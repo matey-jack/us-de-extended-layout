@@ -1,6 +1,6 @@
 Main files in this folder:
- - [usintl48](usintl48) -- this folder contains the compiled layout (described in main ReadMe) that you can install in Windows.
- - [US extended international for 48 keys.klc](US%20extended%20international%20for%2048%20keys.klc) -- source code for the layout.
+ - [usintlir](usintlir) -- this folder contains the compiled layout (described in main ReadMe) that you can install in Windows.
+ - *.klc -- source code for the layouts as described in main Readme.
    You can load it into MS Keyboard Layout Creator and compile it yourself to the installable layout.
  - TODO: base layout for Iris Split keyboard
 
@@ -14,7 +14,7 @@ Some additional files in this folder:
    This layout looks more like the total result that I want to get (when combined with keyboard firmware layout),
    but it has the drawback that the firmware is harder to program, as we can't use standard key labels as a reference.
 
-Changes that Iris needs:
+Summary of the changes as implemented in the most recent (Iris) layout:
  - ;: swap with <>   actually swap both ways, so that the firmware will have a fallback when only US standard layout is active.
  - Shift+690 becomes +=?
  - ^() move to AltGr layer of their original keys
@@ -23,14 +23,3 @@ Changes that Iris needs:
  - '" become live characters and the corresponding dead accents move to AltGr layers
  - add a live ` and ~ in some convenient place on AltGr layer
  - OEM_PLUS keycode mapped to '" to be on base layer and that's the only key with no significant keycode assigned already.
-
-In "fallback mode" keys will be available as follows:
- - ;: and <> simply swap layers
- - ()? directly in their US position Shift+90/
- - = in our alternate mapping AltGr+M, and + on same with additional Shift.
- - \ needs an alternate mapping defined in Firmware
- - '" will need additional 'space' to be pressed in US int'l layout, but will just work in US ANSI layout.
-
-Note that for alternate mappings to work in both modified and standard layouts, 
-the characters += \| need to stay on their original keys in addition to being mapped onto new Shift-layer positions.
-For characters that swap with other mapped characters, we don't need to do that.
